@@ -7,7 +7,7 @@ class Edit extends React.Component {
     }
     
     handleChange() {
-        this.props.toggle(!this.props.current);
+        this.props.toggle(!this.props.current); //toggle prop contains the handleChange method from Parent section
         console.log(`before ${this.props.current} and after ${!this.props.current}`)
     }
     

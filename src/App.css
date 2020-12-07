@@ -47,3 +47,13 @@ input {
     display: inline;
     margin: 8px 0px 8px 8px;
 }
+
+.editable {
+    border: 2px solid blue;
+}
+
+.notEditable {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
