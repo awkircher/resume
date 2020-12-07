@@ -1,5 +1,6 @@
 import React from 'react'
 import Edit from './Edit'
+import TextShort from './TextShort'
 
 class Education extends React.Component {
     constructor(props) {
@@ -25,8 +26,14 @@ class Education extends React.Component {
                     <Edit 
                         current={this.state.isEditable}
                         toggle={this.handleChange} />
-                    <input className="block" type="text" placeholder="Institution name"></input>
-                    <input className="block" type="text" placeholder="Course of study"></input>
+                    <TextShort 
+                        setDisplay={"block"}
+                        setPlaceholder={"Institution"}
+                        setEditable={this.state.isEditable} />
+                    <TextShort 
+                        setDisplay={"block"}
+                        setPlaceholder={"Course of study"}
+                        setEditable={this.state.isEditable} />
                     <fieldset>
                         <input className="inline" type="text" placeholder="Month"></input>
                         <input className="inline" type="text" placeholder="Year"></input>
