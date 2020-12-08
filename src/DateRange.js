@@ -8,12 +8,14 @@ class DateRange extends React.Component {
             yearStartValue: "",
             monthEndValue: "",
             yearEndValue: "",
+            current: false,
             valid: true,
         };
         this.handleMonthStartChange = this.handleMonthStartChange.bind(this);
         this.handleYearStartChange = this.handleYearStartChange.bind(this);
         this.handleMonthEndChange = this.handleMonthEndChange.bind(this);
         this.handleYearEndChange = this.handleYearEndChange.bind(this);
+        this.handleCheck = this.handleCheck.bind(this);
     }
     handleMonthStartChange(e) {
         this.setState({monthStartValue: (e.target.value)});
@@ -30,6 +32,13 @@ class DateRange extends React.Component {
     handleYearEndChange(e) {
         this.setState({yearEndValue: (e.target.value)});
         this.validate(this.state.monthStartValue, this.state.yearStartValue, this.state.monthEndValue, e.target.value);
+    }
+    handleCheck(e) {
+        if (e.target.checked) {
+            this.setState({current: true});
+        } else {
+            this.setState({current: false});
+        }
     }
     validate(startMonth, startYear, endMonth, endYear) {
         console.log("you called validate");
@@ -65,10 +74,11 @@ class DateRange extends React.Component {
         const monthEnd = this.state.monthEndValue;
         const yearEnd = this.state.yearEndValue;
         const valid = this.state.valid;
+        const current = this.state.current;
         if (editable) {
             return (
                <div>
-                   <fieldset>
+                   <fieldset id="rangeStart">
                         <input list="months" value={monthStart} onChange={this.handleMonthStartChange} />
                             <datalist id="months">
                                 <option value="January" />
@@ -86,7 +96,7 @@ class DateRange extends React.Component {
                             </datalist>
                         <input type="number" min="1935" max="2020" placeholder="Year" onChange={this.handleYearStartChange} value={yearStart}></input>
                     </fieldset>
-                    <fieldset>
+                    <fieldset id="rangeEnd">
                         <input list="months" value={monthEnd} onChange={this.handleMonthEndChange} />
                             <datalist id="months">
                                 <option value="January" />
@@ -104,18 +114,30 @@ class DateRange extends React.Component {
                             </datalist>
                         <input type="number" min="1935" max="2020" placeholder="Year" onChange={this.handleYearEndChange} value={yearEnd}></input>
                     </fieldset>
+                    <p>Current?</p>
+                    <input type="checkbox" checked={current} onChange={this.handleCheck}></input>
                     <div className="error">{valid ? "" : "Enter a valid date range"}</div>
                </div> 
             );
         } else {
-            return (
-                <div>
-                    <p className="inline">{monthStart ? monthStart : "No starting month selected, yet."}</p>
-                    <p className="inline">{yearStart ? yearStart : "No starting year entered, yet."}</p>
-                    <p className="inline">{monthEnd ? monthEnd : "No ending month entered, yet."}</p>
-                    <p className="inline">{yearEnd ? yearEnd : "No ending year entered, yet."}</p>
-                </div>
-             );
+            if (current) {
+                return (
+                    <div>
+                        <p className="inline">{monthStart ? monthStart : "No starting month selected, yet."}</p>
+                        <p className="inline">{yearStart ? yearStart : "No starting year entered, yet."}</p>
+                        <p className="inline">Current</p>
+                    </div>
+                 );
+            } else {
+                return (
+                    <div>
+                        <p className="inline">{monthStart ? monthStart : "No starting month selected, yet."}</p>
+                        <p className="inline">{yearStart ? yearStart : "No starting year entered, yet."}</p>
+                        <p className="inline">{monthEnd ? monthEnd : "No ending month entered, yet."}</p>
+                        <p className="inline">{yearEnd ? yearEnd : "No ending year entered, yet."}</p>
+                    </div>
+                 );
+            }
         }
     }
 }
