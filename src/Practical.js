@@ -1,6 +1,7 @@
 import React from 'react'
 import Edit from './Edit'
 import TextShort from './TextShort'
+import DateRange from './DateRange'
 
 class Practical extends React.Component {
     constructor(props) {
@@ -33,6 +34,8 @@ class Practical extends React.Component {
                     <TextShort 
                         display={"block"}
                         placeholder={"Position title"}
+                        editable={this.state.isEditable} />
+                    <DateRange 
                         editable={this.state.isEditable} />
                     <input className="block" type="text" placeholder="Role description"></input>
                     <fieldset>
