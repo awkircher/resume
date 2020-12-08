@@ -37,14 +37,6 @@ class Education extends React.Component {
                         editable={this.state.isEditable} />
                     <DateRange 
                         editable={this.state.isEditable} />
-                    <fieldset>
-                        <input className="inline" type="text" placeholder="Month"></input>
-                        <input className="inline" type="text" placeholder="Year"></input>
-                    </fieldset>
-                    <fieldset>
-                        <input className="inline" type="text" placeholder="Month"></input>
-                        <input className="inline" type="text" placeholder="Year"></input>
-                    </fieldset>
                 </fieldset>
             </form>
           </div>
