@@ -1,6 +1,7 @@
 import React from 'react'
 import Edit from './Edit'
 import TextShort from './TextShort'
+import DateRange from './DateRange'
 
 class Education extends React.Component {
     constructor(props) {
@@ -33,6 +34,8 @@ class Education extends React.Component {
                     <TextShort 
                         display={"block"}
                         placeholder={"Course of study"}
+                        editable={this.state.isEditable} />
+                    <DateRange 
                         editable={this.state.isEditable} />
                     <fieldset>
                         <input className="inline" type="text" placeholder="Month"></input>
