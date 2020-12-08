@@ -38,14 +38,6 @@ class Practical extends React.Component {
                     <DateRange 
                         editable={this.state.isEditable} />
                     <input className="block" type="text" placeholder="Role description"></input>
-                    <fieldset>
-                        <input className="inline" type="text" placeholder="Month"></input>
-                        <input className="inline" type="text" placeholder="Year"></input>
-                    </fieldset>
-                    <fieldset>
-                        <input className="inline" type="text" placeholder="Month"></input>
-                        <input className="inline" type="text" placeholder="Year"></input>
-                    </fieldset>
                 </fieldset>
             </form>
           </div>
