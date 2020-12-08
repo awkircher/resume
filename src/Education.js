@@ -22,11 +22,11 @@ class Education extends React.Component {
           <div className="Education">
             <h1>Education</h1>
             <p>Here you can enter where you've studied. Start with the most recent.</p>
+            <Edit 
+                current={this.state.isEditable}
+                toggle={this.handleChange} />
             <form>
                 <fieldset className="container">
-                    <Edit 
-                        current={this.state.isEditable}
-                        toggle={this.handleChange} />
                     <TextShort 
                         display={"block"}
                         placeholder={"Institution"}

@@ -22,11 +22,11 @@ class Practical extends React.Component {
           <div className="Practical">
             <h1>Practical Experience</h1>
             <p>List your past employers, and describe what you did in each role.</p>
+            <Edit 
+                current={this.state.isEditable}
+                toggle={this.handleChange} />
             <form>
                 <fieldset className="container">
-                    <Edit 
-                        current={this.state.isEditable}
-                        toggle={this.handleChange} />
                     <TextShort 
                         display={"block"}
                         placeholder={"Employer"}

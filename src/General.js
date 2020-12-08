@@ -20,11 +20,11 @@ class General extends React.Component {
           <div className="General" id="General">
             <h1>General Information</h1>
             <p>Use this section to include your name and contact information.</p>
+            <Edit 
+                current={this.state.isEditable}
+                toggle={this.handleChange} />
             <form>
                 <fieldset className="container">
-                    <Edit 
-                        current={this.state.isEditable}
-                        toggle={this.handleChange} />
                     <TextShort 
                         display={"block"}
                         placeholder={"First and last name"}
