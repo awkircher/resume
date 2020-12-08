@@ -27,13 +27,13 @@ class Practical extends React.Component {
                         current={this.state.isEditable}
                         toggle={this.handleChange} />
                     <TextShort 
-                        setDisplay={"block"}
-                        setPlaceholder={"Employer"}
-                        setEditable={this.state.isEditable} />
+                        display={"block"}
+                        placeholder={"Employer"}
+                        editable={this.state.isEditable} />
                     <TextShort 
-                        setDisplay={"block"}
-                        setPlaceholder={"Position title"}
-                        setEditable={this.state.isEditable} />
+                        display={"block"}
+                        placeholder={"Position title"}
+                        editable={this.state.isEditable} />
                     <input className="block" type="text" placeholder="Role description"></input>
                     <fieldset>
                         <input className="inline" type="text" placeholder="Month"></input>

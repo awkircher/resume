@@ -26,9 +26,9 @@ class General extends React.Component {
                         current={this.state.isEditable}
                         toggle={this.handleChange} />
                     <TextShort 
-                        setDisplay={"block"}
-                        setPlaceholder={"First and last name"}
-                        setEditable={this.state.isEditable} />
+                        display={"block"}
+                        placeholder={"First and last name"}
+                        editable={this.state.isEditable} />
                     <input className="block" type="email" placeholder="Email address"></input>
                     <fieldset>
                         <input className="inline" type="text" placeholder="555"></input>

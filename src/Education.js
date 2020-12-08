@@ -27,13 +27,13 @@ class Education extends React.Component {
                         current={this.state.isEditable}
                         toggle={this.handleChange} />
                     <TextShort 
-                        setDisplay={"block"}
-                        setPlaceholder={"Institution"}
-                        setEditable={this.state.isEditable} />
+                        display={"block"}
+                        placeholder={"Institution"}
+                        editable={this.state.isEditable} />
                     <TextShort 
-                        setDisplay={"block"}
-                        setPlaceholder={"Course of study"}
-                        setEditable={this.state.isEditable} />
+                        display={"block"}
+                        placeholder={"Course of study"}
+                        editable={this.state.isEditable} />
                     <fieldset>
                         <input className="inline" type="text" placeholder="Month"></input>
                         <input className="inline" type="text" placeholder="Year"></input>

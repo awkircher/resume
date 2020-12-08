@@ -15,9 +15,9 @@ class TextShort extends React.Component {
     }
 
     render() {
-        const editable = this.props.setEditable; //true or false
-        const display = this.props.setDisplay;
-        const placeholder = this.props.setPlaceholder;
+        const editable = this.props.editable; //true or false
+        const display = this.props.display;
+        const placeholder = this.props.placeholder;
         const value = this.state.value;
         if (editable) {
             return (
