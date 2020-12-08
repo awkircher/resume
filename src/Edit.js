@@ -12,11 +12,20 @@ class Edit extends React.Component {
     }
     
     render() {
-        return (
-            <div className="Edit">
-              <input type="button" onClick={this.handleChange} value="Edit"></input>
-            </div>
-        );
+        const editable = this.props.current;
+        if (editable) {
+            return (
+                <div className="Save">
+                  <input type="button" onClick={this.handleChange} value="Save"></input>
+                </div>
+            );
+        } else {
+            return (
+                <div className="Edit">
+                  <input type="button" onClick={this.handleChange} value="Edit"></input>
+                </div>
+            );
+        }
     }
 }
 
