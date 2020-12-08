@@ -9,9 +9,8 @@ class TextShort extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
     
-    handleChange() {
-        //this.props.toggle(!this.props.current);
-        console.log('TextShort changed!')
+    handleChange(e) {
+        this.setState({value: (e.target.value)});
     }
 
     render() {
@@ -22,15 +21,23 @@ class TextShort extends React.Component {
         if (editable) {
             return (
                 <div className="TextShort editable">
-                    <input className={display} type="text" value={value} onBlur={this.handleChange} placeholder={placeholder}></input>
+                    <input className={display} type="text" value={value} onChange={this.handleChange} placeholder={placeholder}></input>
                 </div>
             );
         } else {
-            return (
-                <div className="TextShort notEditable">
-                    <input className={display} type="text" value={value}></input>
-                </div>
-            );
+            if (!value) {
+                return (
+                    <div className="TextShort notEditable">
+                        <p>Nothing entered, yet.</p>
+                    </div>  
+                );
+            } else {
+                return (
+                    <div className="TextShort notEditable">
+                        <p>{value}</p>
+                    </div>
+                );
+            }
         }
     }
 }
