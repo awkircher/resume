@@ -17,23 +17,41 @@ class DateRange extends React.Component {
     }
     handleMonthStartChange(e) {
         this.setState({monthStartValue: (e.target.value)});
+        this.validate(e.target.value, this.state.yearStartValue, this.state.monthEndValue, this.state.yearEndValue);
     }
     handleYearStartChange(e) {
         this.setState({yearStartValue: (e.target.value)});
-        this.validate(e.target.value, this.state.yearEndValue);
+        this.validate(this.state.monthStartValue, e.target.value, this.state.monthEndValue, this.state.yearEndValue);
     }
     handleMonthEndChange(e) {
         this.setState({monthEndValue: (e.target.value)});
+        this.validate(this.state.monthStartValue, this.state.yearStartValue, e.target.value, this.state.yearEndValue);
     }
     handleYearEndChange(e) {
         this.setState({yearEndValue: (e.target.value)});
-        this.validate(this.state.yearStartValue, e.target.value);
+        this.validate(this.state.monthStartValue, this.state.yearStartValue, this.state.monthEndValue, e.target.value);
     }
-    validate(start, end) {
-        if (start === "" || end === "") {
+    validate(startMonth, startYear, endMonth, endYear) {
+        console.log("you called validate");
+        const formatYear = /(19|20)\d\d/;
+        const validStart = formatYear.test(startYear);
+        const validEnd = formatYear.test(endYear);
+        if (startYear === "" || endYear === "") {
             return;
         }
-        else if (end >= start) {
+        if (endYear === startYear && validStart && validEnd) {
+            const startDate = new Date(`${startMonth}, ${startYear}`);
+            const endDate = new Date(`${endMonth}, ${endYear}`);
+            console.log(startDate, endDate);
+            if (startDate.getMonth() <= endDate.getMonth()) {
+                console.log("start month is less than end month");
+                this.setState({valid: true})
+            } else {
+                console.log("start month is greater than end month");
+                this.setState({valid: false})
+            }
+        }
+        else if (endYear >= startYear && validStart && validEnd) {
             this.setState({valid: true});
         } else {
             this.setState({valid: false});
@@ -67,7 +85,6 @@ class DateRange extends React.Component {
                                 <option value="December" />
                             </datalist>
                         <input type="number" min="1935" max="2020" placeholder="Year" onChange={this.handleYearStartChange} value={yearStart}></input>
-                        <div className="error">{valid ? "" : "Enter a valid date range"}</div>
                     </fieldset>
                     <fieldset>
                         <input list="months" value={monthEnd} onChange={this.handleMonthEndChange} />
@@ -86,8 +103,8 @@ class DateRange extends React.Component {
                                 <option value="December" />
                             </datalist>
                         <input type="number" min="1935" max="2020" placeholder="Year" onChange={this.handleYearEndChange} value={yearEnd}></input>
-                        <div className="error">{valid ? "" : "Enter a valid date range"}</div>
                     </fieldset>
+                    <div className="error">{valid ? "" : "Enter a valid date range"}</div>
                </div> 
             );
         } else {
