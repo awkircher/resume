@@ -79,43 +79,43 @@ class DateRange extends React.Component {
         if (editable) {
             return (
                <div>
-                   <h4>{label}</h4>
+                   <label>{label}</label>
                    <fieldset id="rangeStart">
                        <p>Start date</p>
-                        <input list="months" value={monthStart} onChange={this.handleMonthStartChange} />
-                            <datalist id="months">
-                                <option value="January" />
-                                <option value="February" />
-                                <option value="March" />
-                                <option value="April" />
-                                <option value="May" />
-                                <option value="June" />
-                                <option value="July" />
-                                <option value="August" />
-                                <option value="September" />
-                                <option value="October" />
-                                <option value="November" />
-                                <option value="December" />
-                            </datalist>
+                        <select value={monthStart} onChange={this.handleMonthStartChange}>
+                            <option value="Month" defaultValue>Month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
                         <input type="number" min="1935" max="2020" placeholder="Year" onChange={this.handleYearStartChange} value={yearStart}></input>
                     </fieldset>
                     <fieldset id="rangeEnd">
                         <p>End date</p>
-                        <input list="months" value={monthEnd} onChange={this.handleMonthEndChange} />
-                            <datalist id="months">
-                                <option value="January" />
-                                <option value="February" />
-                                <option value="March" />
-                                <option value="April" />
-                                <option value="May" />
-                                <option value="June" />
-                                <option value="July" />
-                                <option value="August" />
-                                <option value="September" />
-                                <option value="October" />
-                                <option value="November" />
-                                <option value="December" />
-                            </datalist>
+                        <select value={monthEnd} onChange={this.handleMonthEndChange}>
+                            <option value="Month" defaultValue>Month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
                         <input type="number" min="1935" max="2020" placeholder="Year" onChange={this.handleYearEndChange} value={yearEnd}></input>
                     </fieldset>
                     <p>Current?</p>
@@ -127,18 +127,20 @@ class DateRange extends React.Component {
             if (current) {
                 return (
                     <div>
-                        <p className="inline">{monthStart ? monthStart : "No starting month selected, yet."}</p>
-                        <p className="inline">{yearStart ? yearStart : "No starting year entered, yet."}</p>
+                        <label>{label}</label>
+                        <p className="inline">{monthStart ? monthStart : "Month"}</p>
+                        <p className="inline">{yearStart ? yearStart : "Year"}</p>
                         <p className="inline">Current</p>
                     </div>
                  );
             } else {
                 return (
                     <div>
-                        <p className="inline">{monthStart ? monthStart : "No starting month selected, yet."}</p>
-                        <p className="inline">{yearStart ? yearStart : "No starting year entered, yet."}</p>
-                        <p className="inline">{monthEnd ? monthEnd : "No ending month entered, yet."}</p>
-                        <p className="inline">{yearEnd ? yearEnd : "No ending year entered, yet."}</p>
+                        <label>{label}</label>
+                        <p className="inline">{monthStart ? monthStart : "Month"}</p>
+                        <p className="inline">{yearStart ? yearStart : "Year"}</p>
+                        <p className="inline">{monthEnd ? monthEnd : "Month"}</p>
+                        <p className="inline">{yearEnd ? yearEnd : "Year"}</p>
                     </div>
                  );
             }
