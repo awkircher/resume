@@ -119,9 +119,9 @@ class DateRange extends React.Component {
                             <option value="December">December</option>
                         </select>
                         <input type="number" min="1935" max="2020" placeholder="Year" onChange={this.handleYearEndChange} value={yearEnd}></input>
+                        <input className="currentCheck" type="checkbox" checked={current} onChange={this.handleCheck}></input>
+                        <p className="inline">Current</p>
                     </fieldset>
-                    <p>Current?</p>
-                    <input type="checkbox" checked={current} onChange={this.handleCheck}></input>
                     <div className="error">{valid ? "" : "Enter a valid date range"}</div>
                </div> 
             );

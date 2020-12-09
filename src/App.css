@@ -149,3 +149,11 @@ input[type=text], input[type=number], select {
     display: inline-block;
     margin: 0px 21px 0px 23px;
 }
+
+.currentCheck {
+    margin: 0px 8px 0px 24px;
+    position: relative;
+    top: 6px;
+    width: 24px;
+    height: 24px;
+}
