@@ -23,6 +23,7 @@ label { /* input labels */
     text-transform: uppercase;
     color: #3468EC;
     margin: 0px;
+    display: block;
 }
 
 p, input, select {
@@ -48,8 +49,18 @@ fieldset {
     margin: 0;
 }
 
+select {
+    position: relative;
+    appearance: none;
+    min-width: 120px;
+    background-image: url('./images/caret.svg');
+    background-repeat: no-repeat;
+    background-position-x: 92px;
+    background-position-y: center;
+}
+
 input, select {
-    padding: 4px;
+    padding: 8px;
     border: thin solid gray;
     border-radius: 2px;
 }
@@ -62,6 +73,10 @@ input[type=text], input[type=number], select {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.DateRange {
+    margin-bottom: 8px;
 }
 
 .Save, .Edit {
@@ -96,11 +111,15 @@ input[type=text], input[type=number], select {
     box-sizing: border-box;
     border-radius: 4px; 
     margin-bottom: 48px;
-    padding: 8px 16px;
+    padding: 10px 16px;
 }
 
 .block {
     display: block;
+}
+
+.relative {
+    position: relative;
 }
 
 .inline {
@@ -114,4 +133,19 @@ input[type=text], input[type=number], select {
 
 .editable, .notEditable {
     margin-bottom: 16px
+}
+
+.month {
+    margin: 0px 4px 0px 0px;
+}
+
+.arrow {
+    position: relative;
+    top: 2px;
+    background-image: url('./images/arrow.svg');
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 16px;
+    display: inline-block;
+    margin: 0px 21px 0px 23px;
 }
