@@ -25,7 +25,7 @@ label { /* input labels */
     margin: 0px;
 }
 
-p, input {
+p, input, select {
     font-size: 16px;
     font-weight: 400;
 }
@@ -48,13 +48,13 @@ fieldset {
     margin: 0;
 }
 
-input {
+input, select {
     padding: 4px;
     border: thin solid gray;
     border-radius: 2px;
 }
 
-input[type=text], input[type=number] {
+input[type=text], input[type=number], select {
     margin: 0px 8px 8px 0px;
 }
 
