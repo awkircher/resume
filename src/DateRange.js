@@ -76,9 +76,11 @@ class DateRange extends React.Component {
         const yearEnd = this.state.yearEndValue;
         const valid = this.state.valid;
         const current = this.state.current;
+        const monthEl = <span className="italic">Month</span>;
+        const yearEl = <span className="italic">Year</span>;
         if (editable) {
             return (
-               <div>
+               <div className="DateRange">
                    <label>{label}</label>
                    <fieldset id="rangeStart">
                        <p>Start date</p>
@@ -126,21 +128,23 @@ class DateRange extends React.Component {
         } else {
             if (current) {
                 return (
-                    <div>
+                    <div className="DateRange">
                         <label>{label}</label>
-                        <p className="inline">{monthStart ? monthStart : "Month"}</p>
-                        <p className="inline">{yearStart ? yearStart : "Year"}</p>
+                        <p className="inline month">{monthStart ? monthStart : monthEl}</p>
+                        <p className="inline">{yearStart ? yearStart : yearEl}</p>
+                        <div className="arrow"></div>
                         <p className="inline">Current</p>
                     </div>
                  );
             } else {
                 return (
-                    <div>
+                    <div className="DateRange">
                         <label>{label}</label>
-                        <p className="inline">{monthStart ? monthStart : "Month"}</p>
-                        <p className="inline">{yearStart ? yearStart : "Year"}</p>
-                        <p className="inline">{monthEnd ? monthEnd : "Month"}</p>
-                        <p className="inline">{yearEnd ? yearEnd : "Year"}</p>
+                        <p className="inline month">{monthStart ? monthStart : monthEl}</p>
+                        <p className="inline">{yearStart ? yearStart : yearEl}</p>
+                        <div className="arrow"></div>
+                        <p className="inline month">{monthEnd ? monthEnd : monthEl}</p>
+                        <p className="inline">{yearEnd ? yearEnd : yearEl}</p>
                     </div>
                  );
             }
