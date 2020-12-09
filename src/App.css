@@ -2,12 +2,14 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: "Inter", serif;
     padding: 24px;
+    box-sizing: border-box;
+    min-width: 670px;
 }
 
 h1 {
     font-weight: 700;
     font-size: 34px;
-    line-height: 21px;
+    line-height: 54px;
     width: 100%;
     margin: 0px;
     color: #494949;
@@ -16,10 +18,11 @@ h1 {
 h4 { /* input labels */
     font-weight: 700;
     font-size: 11px;
-    line-height: 13px;
+    line-height: 24px;
     letter-spacing: 0.07em;
     text-transform: uppercase;
     color: #3468EC;
+    margin: 0px;
 }
 
 p, input {
@@ -30,10 +33,13 @@ p, input {
 p {
     line-height: 19px;
     color: #494949;
+    margin: 0px;
 }
 
 form {
     width: 100%;
+    position: relative;
+    top: -8px;
 }
 
 fieldset {
@@ -43,10 +49,13 @@ fieldset {
 }
 
 input {
-    margin: 8px;
     padding: 4px;
     border: thin solid gray;
     border-radius: 2px;
+}
+
+input[type=text], input[type=number] {
+    margin: 0px 8px 8px 0px;
 }
 
 .General, .Education, .Practical {
@@ -58,7 +67,7 @@ input {
 .Save, .Edit {
     width: fit-content;
     position: relative;
-    bottom: 14px;
+    bottom: 24px;
 }
 
 .Save input[type=button] {
@@ -85,8 +94,9 @@ input {
     background: #F7F7F8;
     border: 1px solid #E0E0E0;
     box-sizing: border-box;
-    border-radius: 2px; 
+    border-radius: 4px; 
     margin-bottom: 48px;
+    padding: 8px 16px;
 }
 
 .block {
@@ -95,13 +105,13 @@ input {
 
 .inline {
     display: inline;
-    margin: 8px 0px 8px 8px;
 }
 
-.editable {
-   /* add styles if needed */
+.italic {
+    font-style: italic;
+    margin-top: 4px;
 }
 
-.notEditable {
-    /* add styles if needed */
+.editable, .notEditable {
+    margin-bottom: 16px
 }

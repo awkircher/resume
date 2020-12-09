@@ -31,7 +31,7 @@ class TextShort extends React.Component {
                 return (
                     <div className="TextShort notEditable">
                         <h4>{label}</h4>
-                        <p>{placeholder}</p>
+                        <p className="italic">{placeholder}</p>
                     </div>  
                 );
             } else {
