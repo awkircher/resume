@@ -31,7 +31,7 @@ class Email extends React.Component {
         if (editable) {
             return (
                 <div className="Email editable">
-                    <h4>{label}</h4>
+                    <label>{label}</label>
                     <input className={display} type="text" value={value} onChange={this.handleChange} placeholder={placeholder}></input>
                     <div className="error">{valid ? "" : "Enter a valid email address"}</div>
                 </div>
@@ -40,13 +40,14 @@ class Email extends React.Component {
             if (!value) {
                 return (
                     <div className="Email notEditable">
-                        <h4>{label}</h4>
+                        <label>{label}</label>
                         <p className="italic">{placeholder}</p>
                     </div>  
                 );
             } else {
                 return (
                     <div className="Email notEditable">
+                        <label>{label}</label>
                         <p>{value}</p>
                     </div>
                 );

@@ -22,7 +22,7 @@ class TextShort extends React.Component {
         if (editable) {
             return (
                 <div className="TextShort editable">
-                    <h4>{label}</h4>
+                    <label>{label}</label>
                     <input className={display} type="text" value={value} onChange={this.handleChange} placeholder={placeholder}></input>
                 </div>
             );
@@ -30,14 +30,14 @@ class TextShort extends React.Component {
             if (!value) {
                 return (
                     <div className="TextShort notEditable">
-                        <h4>{label}</h4>
+                        <label>{label}</label>
                         <p className="italic">{placeholder}</p>
                     </div>  
                 );
             } else {
                 return (
                     <div className="TextShort notEditable">
-                        <h4>{label}</h4>
+                        <label>{label}</label>
                         <p>{value}</p>
                     </div>
                 );
