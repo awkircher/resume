@@ -6,10 +6,20 @@ body {
 
 h1 {
     font-weight: 700;
-    font-size: 28px;
-    line-height: 0.3em;
+    font-size: 34px;
+    line-height: 21px;
     width: 100%;
-    margin: 0px 0px 8px 0px;
+    margin: 0px;
+    color: #494949;
+}
+
+h4 { /* input labels */
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #3468EC;
 }
 
 p, input {
@@ -18,7 +28,8 @@ p, input {
 }
 
 p {
-    line-height: 1em;
+    line-height: 19px;
+    color: #494949;
 }
 
 form {
@@ -44,14 +55,37 @@ input {
     justify-content: space-between;
 }
 
-.Save {
+.Save, .Edit {
     width: fit-content;
+    position: relative;
+    bottom: 14px;
+}
+
+.Save input[type=button] {
+    width: 73px;
+    height: 40px;
+    background: #3468EC;
+    border: 1px solid #3468EC;
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: #ffffff;
+}
+
+.Edit input[type=button] {
+    width: 73px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: #3468EC;
 }
 
 .container {
-    border: thin solid blue;
-    background: lightskyblue;
-    border-radius: 5px;
+    background: #F7F7F8;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 2px; 
     margin-bottom: 48px;
 }
 
@@ -65,11 +99,9 @@ input {
 }
 
 .editable {
-    border: 2px solid blue;
+   /* add styles if needed */
 }
 
 .notEditable {
-    border: none;
-    box-shadow: none;
-    outline: none;
+    /* add styles if needed */
 }

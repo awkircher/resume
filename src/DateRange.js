@@ -69,6 +69,7 @@ class DateRange extends React.Component {
 
     render() {
         const editable = this.props.editable; //true or false
+        const label = this.props.label;
         const monthStart = this.state.monthStartValue;
         const yearStart = this.state.yearStartValue;
         const monthEnd = this.state.monthEndValue;
@@ -78,7 +79,9 @@ class DateRange extends React.Component {
         if (editable) {
             return (
                <div>
+                   <h4>{label}</h4>
                    <fieldset id="rangeStart">
+                       <p>Start date</p>
                         <input list="months" value={monthStart} onChange={this.handleMonthStartChange} />
                             <datalist id="months">
                                 <option value="January" />
@@ -97,6 +100,7 @@ class DateRange extends React.Component {
                         <input type="number" min="1935" max="2020" placeholder="Year" onChange={this.handleYearStartChange} value={yearStart}></input>
                     </fieldset>
                     <fieldset id="rangeEnd">
+                        <p>End date</p>
                         <input list="months" value={monthEnd} onChange={this.handleMonthEndChange} />
                             <datalist id="months">
                                 <option value="January" />

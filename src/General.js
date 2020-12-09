@@ -28,6 +28,7 @@ class General extends React.Component {
                     <TextShort 
                         display={"block"}
                         placeholder={"First and last name"}
+                        label={"Name"}
                         editable={this.state.isEditable} />
                     <input className="block" type="email" placeholder="Email address"></input>
                     <fieldset>

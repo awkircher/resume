@@ -30,12 +30,15 @@ class Practical extends React.Component {
                     <TextShort 
                         display={"block"}
                         placeholder={"Employer"}
+                        label={"Employer"}
                         editable={this.state.isEditable} />
                     <TextShort 
                         display={"block"}
                         placeholder={"Position title"}
+                        label={"Position"}
                         editable={this.state.isEditable} />
                     <DateRange 
+                        label={"Dates of employment"}
                         editable={this.state.isEditable} />
                     <input className="block" type="text" placeholder="Role description"></input>
                 </fieldset>

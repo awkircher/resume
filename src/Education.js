@@ -30,12 +30,15 @@ class Education extends React.Component {
                     <TextShort 
                         display={"block"}
                         placeholder={"Institution"}
+                        label={"Institution"}
                         editable={this.state.isEditable} />
                     <TextShort 
                         display={"block"}
                         placeholder={"Course of study"}
+                        label={"Course of study"}
                         editable={this.state.isEditable} />
                     <DateRange 
+                        label={"Dates of attendance"}
                         editable={this.state.isEditable} />
                 </fieldset>
             </form>
