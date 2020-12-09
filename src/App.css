@@ -15,7 +15,7 @@ h1 {
     color: #494949;
 }
 
-h4 { /* input labels */
+label { /* input labels */
     font-weight: 700;
     font-size: 11px;
     line-height: 24px;
