@@ -37,6 +37,7 @@ class TextShort extends React.Component {
             } else {
                 return (
                     <div className="TextShort notEditable">
+                        <h4>{label}</h4>
                         <p>{value}</p>
                     </div>
                 );
