@@ -1,6 +1,6 @@
 import React from 'react'
 import Edit from './Edit'
-import TextShort from './TextShort'
+import Text from './Text'
 import Email from './Email'
 import Phone from './Phone'
 
@@ -27,8 +27,9 @@ class General extends React.Component {
                 toggle={this.handleChange} />
             <form>
                 <fieldset className="container">
-                    <TextShort 
+                    <Text 
                         display={"block"}
+                        length={"250"}
                         placeholder={"First and last name"}
                         label={"Name"}
                         editable={this.state.isEditable} />

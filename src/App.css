@@ -105,6 +105,16 @@ input[type=text], input[type=number], select {
     color: #3468EC;
 }
 
+input[type=textarea] {
+    width: 500px;
+    height: 250px;
+}
+
+input[type=textarea]::placeholder {
+    position: relative;
+    top: -112px;
+}
+
 .container {
     background: #F7F7F8;
     border: 1px solid #E0E0E0;

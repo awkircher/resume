@@ -1,6 +1,6 @@
 import React from 'react'
 import Edit from './Edit'
-import TextShort from './TextShort'
+import Text from './Text'
 import DateRange from './DateRange'
 
 class Education extends React.Component {
@@ -27,13 +27,15 @@ class Education extends React.Component {
                 toggle={this.handleChange} />
             <form>
                 <fieldset className="container">
-                    <TextShort 
+                    <Text 
                         display={"block"}
+                        length={"250"}
                         placeholder={"Institution"}
                         label={"Institution"}
                         editable={this.state.isEditable} />
-                    <TextShort 
+                    <Text 
                         display={"block"}
+                        length={"250"}
                         placeholder={"Course of study"}
                         label={"Course of study"}
                         editable={this.state.isEditable} />
