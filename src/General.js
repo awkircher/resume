@@ -2,6 +2,7 @@ import React from 'react'
 import Edit from './Edit'
 import TextShort from './TextShort'
 import Email from './Email'
+import Phone from './Phone'
 
 class General extends React.Component {
     constructor(props) {
@@ -36,11 +37,10 @@ class General extends React.Component {
                         placeholder={"Email address"}
                         label={"Email"}
                         editable={this.state.isEditable} />
-                    <fieldset>
-                        <input className="inline" type="text" placeholder="555"></input>
-                        <input className="inline" type="text" placeholder="321"></input>
-                        <input className="inline" type="text" placeholder="4567"></input>
-                    </fieldset>
+                    <Phone 
+                        label={"Phone"}
+                        display={"inline"}
+                        editable={this.state.isEditable} />
                 </fieldset>
             </form>
           </div>
