@@ -39,10 +39,12 @@ class Practical extends React.Component {
             <div className="Practical">
                 <h1>Practical Experience</h1>
                 <p>List your past employers, and describe what you did in each role.</p>
-                <span>{this.state.isEditable ? addButton : ""}</span>
-                <Edit 
-                    current={this.state.isEditable}
-                    toggle={this.handleChange} />
+                <div className="buttons">
+                    <span className="addButton">{this.state.isEditable ? addButton : ""}</span>
+                    <Edit 
+                        current={this.state.isEditable}
+                        toggle={this.handleChange} />
+                </div>
                 <form className="generatedForm">
                     {fieldsets}
                 </form>

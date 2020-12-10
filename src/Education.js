@@ -40,10 +40,12 @@ class Education extends React.Component {
           <div className="Education">
             <h1>Education</h1>
             <p>Here you can enter where you've studied. Start with the most recent.</p>
-            <span>{this.state.isEditable ? addButton : ""}</span>
-            <Edit 
-                current={this.state.isEditable}
-                toggle={this.handleChange} />
+            <div className="buttons">
+                <span className="addButton">{this.state.isEditable ? addButton : ""}</span>
+                <Edit 
+                    current={this.state.isEditable}
+                    toggle={this.handleChange} />
+            </div>
             <form>
                 {fieldsets}
             </form>

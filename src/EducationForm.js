@@ -19,7 +19,7 @@ class EducationForm extends React.Component {
         const removeButton = <button onClick={this.remove}>Remove</button>;
         return (
             <fieldset className="container">
-                <span>{key ? removeButton : ""}</span>
+                <span className="removeButton">{key ? removeButton : ""}</span>
                 <Text 
                     display={"block"}
                     length={"250"}

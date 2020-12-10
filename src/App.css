@@ -79,6 +79,7 @@ textarea {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 32px;
 }
 
 .DateRange {
@@ -112,12 +113,29 @@ textarea {
 }
 
 .container {
+    position: relative;
     background: #F7F7F8;
     border: 1px solid #E0E0E0;
     box-sizing: border-box;
     border-radius: 4px; 
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     padding: 10px 16px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+}
+
+.removeButton {
+    position: absolute;
+    right: 16px;
+    top: 40px;
+}
+
+.removeButton button {
+    color: #E94825;
 }
 
 .block {
