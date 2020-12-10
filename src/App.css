@@ -26,7 +26,7 @@ label { /* input labels */
     display: block;
 }
 
-p, input, select {
+p, input, select, button {
     font-size: 16px;
     font-weight: 400;
 }
@@ -85,7 +85,7 @@ textarea {
     margin-bottom: 8px;
 }
 
-.Save, .Edit {
+.Save, .Edit, button {
     width: fit-content;
     position: relative;
     bottom: 24px;
@@ -101,7 +101,7 @@ textarea {
     color: #ffffff;
 }
 
-.Edit input[type=button] {
+.Edit input[type=button], button {
     width: 73px;
     height: 40px;
     background: #FFFFFF;

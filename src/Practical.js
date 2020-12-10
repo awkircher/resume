@@ -1,63 +1,52 @@
 import React from 'react'
 import Edit from './Edit'
-import Text from './Text'
-import DateRange from './DateRange'
+import PracticalForm from './PracticalForm'
 
 class Practical extends React.Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
+        this.addNew = this.addNew.bind(this);
+        this.remove = this.remove.bind(this);
         this.state = {
-            isEditable: true
+            isEditable: true,
+            addedSections: [], 
         }
     }
 
     handleChange(edit) {
         this.setState({isEditable: edit})
-        console.log(`Practical component is editable? ${this.state.isEditable}`)
+    }
+
+    addNew() {
+        const length = this.state.addedSections.length;
+        const next = length;
+        this.setState({addedSections: [...this.state.addedSections, next]})
+    }
+
+    remove(array) {
+        this.setState({addedSections: array})
     }
 
     render() {
-      return (
-          <div className="Practical">
-            <h1>Practical Experience</h1>
-            <p>List your past employers, and describe what you did in each role.</p>
-            <Edit 
-                current={this.state.isEditable}
-                toggle={this.handleChange} />
-            <form>
-                <fieldset className="container">
-                    <Text 
-                        display={"block"}
-                        length={"250"}
-                        placeholder={"Employer"}
-                        label={"Employer"}
-                        type={"text"}
-                        editable={this.state.isEditable} />
-                    <Text
-                        display={"block"}
-                        length={"250"}
-                        placeholder={"Position title"}
-                        label={"Position"}
-                        type={"text"}
-                        editable={this.state.isEditable} />
-                    <DateRange 
-                        label={"Dates of employment"}
-                        editable={this.state.isEditable} />
-                    <Text
-                        display={"block"}
-                        length={"500"}
-                        placeholder={"Role description"}
-                        label={"Role Description"}
-                        type={"textarea"}
-                        cols={"50"}
-                        rows={"5"}
-                        editable={this.state.isEditable} />
-                </fieldset>
-            </form>
-          </div>
+        const fieldsets = this.state.addedSections.map((index) =>
+            <PracticalForm key={index.toString()} isEditable={this.state.isEditable} />
         );
-      }
+        return (
+            <div className="Practical">
+                <h1>Practical Experience</h1>
+                <p>List your past employers, and describe what you did in each role.</p>
+                <button onClick={this.addNew}>Add</button>
+                <button onClick={() => this.remove([0,1])}>Remove</button>
+                <Edit 
+                    current={this.state.isEditable}
+                    toggle={this.handleChange} />
+                <form className="generatedForm">
+                    {fieldsets}
+                </form>
+            </div>
+            );
+        }
     }
   
   export default Practical;
