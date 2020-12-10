@@ -80,7 +80,7 @@ class DateRange extends React.Component {
         const yearEl = <span className="italic">Year</span>;
         if (editable) {
             return (
-               <div className="DateRange">
+               <div className="DateRange editable">
                    <label>{label}</label>
                    <fieldset id="rangeStart">
                        <p>Start date</p>
@@ -128,7 +128,7 @@ class DateRange extends React.Component {
         } else {
             if (current) {
                 return (
-                    <div className="DateRange">
+                    <div className="DateRange notEditable">
                         <label>{label}</label>
                         <p className="inline month">{monthStart ? monthStart : monthEl}</p>
                         <p className="inline">{yearStart ? yearStart : yearEl}</p>
@@ -138,7 +138,7 @@ class DateRange extends React.Component {
                  );
             } else {
                 return (
-                    <div className="DateRange">
+                    <div className="DateRange notEditable">
                         <label>{label}</label>
                         <p className="inline month">{monthStart ? monthStart : monthEl}</p>
                         <p className="inline">{yearStart ? yearStart : yearEl}</p>
