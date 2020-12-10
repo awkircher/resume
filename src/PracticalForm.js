@@ -3,9 +3,22 @@ import Text from './Text'
 import DateRange from './DateRange'
 
 class PracticalForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.remove = this.remove.bind(this);
+    }
+
+    remove(e) {
+        const key = this.props.uuid;
+        e.preventDefault();
+        console.log("PracticalForm called remove key with " + key)
+        this.props.remove(key);
+    }
+
     render() {
         return (
             <fieldset className="container">
+                <button onClick={this.remove}>Remove</button>
                 <Text 
                     display={"block"}
                     length={"250"}

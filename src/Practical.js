@@ -10,7 +10,7 @@ class Practical extends React.Component {
         this.remove = this.remove.bind(this);
         this.state = {
             isEditable: true,
-            addedSections: [], 
+            addedSections: [0], 
         }
     }
 
@@ -24,20 +24,23 @@ class Practical extends React.Component {
         this.setState({addedSections: [...this.state.addedSections, next]})
     }
 
-    remove(array) {
-        this.setState({addedSections: array})
+    remove(key) {
+        const addedSections = this.state.addedSections;
+        const update = addedSections.filter((section) => section.toString() !== key);
+        console.table(update);
+        this.setState({addedSections: update})
     }
 
     render() {
         const fieldsets = this.state.addedSections.map((index) =>
-            <PracticalForm key={index.toString()} isEditable={this.state.isEditable} />
+            <PracticalForm key={index.toString()} uuid={index.toString()} remove={this.remove} isEditable={this.state.isEditable} />
         );
+        const addButton = <button onClick={this.addNew}>Add</button>
         return (
             <div className="Practical">
                 <h1>Practical Experience</h1>
                 <p>List your past employers, and describe what you did in each role.</p>
-                <button onClick={this.addNew}>Add</button>
-                <button onClick={() => this.remove([0,1])}>Remove</button>
+                <span>{this.state.isEditable ? addButton : ""}</span>
                 <Edit 
                     current={this.state.isEditable}
                     toggle={this.handleChange} />
