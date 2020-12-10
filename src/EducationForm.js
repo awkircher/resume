@@ -2,7 +2,7 @@ import React from 'react'
 import Text from './Text'
 import DateRange from './DateRange'
 
-class PracticalForm extends React.Component {
+class EducationForm extends React.Component {
     constructor(props) {
         super(props);
         this.remove = this.remove.bind(this);
@@ -23,32 +23,23 @@ class PracticalForm extends React.Component {
                 <Text 
                     display={"block"}
                     length={"250"}
-                    placeholder={"Employer"}
-                    label={"Employer"}
+                    placeholder={"Institution"}
                     type={"text"}
+                    label={"Institution"}
                     editable={this.props.isEditable} />
-                <Text
+                <Text 
                     display={"block"}
                     length={"250"}
-                    placeholder={"Position title"}
-                    label={"Position"}
+                    placeholder={"Course of study"}
                     type={"text"}
+                    label={"Course of study"}
                     editable={this.props.isEditable} />
                 <DateRange 
-                    label={"Dates of employment"}
-                    editable={this.props.isEditable} />
-                <Text
-                    display={"block"}
-                    length={"500"}
-                    placeholder={"Role description"}
-                    label={"Role Description"}
-                    type={"textarea"}
-                    cols={"50"}
-                    rows={"5"}
+                    label={"Dates of attendance"}
                     editable={this.props.isEditable} />
             </fieldset>
         );
     }
 }
 
-export default PracticalForm;
+export default EducationForm;

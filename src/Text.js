@@ -23,33 +23,35 @@ class Text extends React.Component {
         const cols = this.props.cols;
         const rows = this.props.rows;
         const value = this.state.value;
-        if (editable && type === 'text') {
-            return (
-                <div className="Text editable">
-                    <label>{label}</label>
-                    <input 
-                        className={display} 
-                        type={type} 
-                        value={value} 
-                        onChange={this.handleChange} 
-                        placeholder={placeholder} 
-                        maxLength={length}></input>
-                </div>
-            );
-        } else if (editable && type === 'textarea') {
-            return (
-                <div className="Textarea editable">
-                    <label>{label}</label>
-                    <textarea
-                        className={display}
-                        value={value}
-                        onChange={this.handleChange}
-                        placeholder={placeholder}
-                        cols={cols}
-                        rows={rows}
-                        maxLength={length}></textarea>
-                </div>
-            );
+        if (editable) {
+            if (type === 'text') {
+                return (
+                    <div className="Text editable">
+                        <label>{label}</label>
+                        <input 
+                            className={display} 
+                            type={type} 
+                            value={value} 
+                            onChange={this.handleChange} 
+                            placeholder={placeholder} 
+                            maxLength={length}></input>
+                    </div>
+                );
+            } else if (type === 'textarea') {
+                return (
+                    <div className="Textarea editable">
+                        <label>{label}</label>
+                        <textarea
+                            className={display}
+                            value={value}
+                            onChange={this.handleChange}
+                            placeholder={placeholder}
+                            cols={cols}
+                            rows={rows}
+                            maxLength={length}></textarea>
+                    </div>
+                );
+            }
         } else {
             if (!value) {
                 return (

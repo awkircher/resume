@@ -31,6 +31,7 @@ class General extends React.Component {
                         display={"block"}
                         length={"250"}
                         placeholder={"First and last name"}
+                        type={"text"}
                         label={"Name"}
                         editable={this.state.isEditable} />
                     <Email

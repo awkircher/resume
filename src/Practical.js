@@ -27,7 +27,6 @@ class Practical extends React.Component {
     remove(key) {
         const addedSections = this.state.addedSections;
         const update = addedSections.filter((section) => section.toString() !== key);
-        console.table(update);
         this.setState({addedSections: update})
     }
 
