@@ -69,6 +69,12 @@ input[type=text], input[type=number], select {
     margin: 0px 8px 8px 0px;
 }
 
+textarea {
+    padding: 8px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
 .General, .Education, .Practical {
     display: flex;
     flex-wrap: wrap;
@@ -103,16 +109,6 @@ input[type=text], input[type=number], select {
     box-sizing: border-box;
     border-radius: 2px;
     color: #3468EC;
-}
-
-input[type=textarea] {
-    width: 500px;
-    height: 250px;
-}
-
-input[type=textarea]::placeholder {
-    position: relative;
-    top: -112px;
 }
 
 .container {

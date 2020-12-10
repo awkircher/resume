@@ -20,12 +20,34 @@ class Text extends React.Component {
         const label = this.props.label;
         const display = this.props.display;
         const placeholder = this.props.placeholder;
+        const cols = this.props.cols;
+        const rows = this.props.rows;
         const value = this.state.value;
-        if (editable) {
+        if (editable && type === 'text') {
             return (
                 <div className="Text editable">
                     <label>{label}</label>
-                    <input className={display} type={type} value={value} onChange={this.handleChange} placeholder={placeholder} maxLength={length}></input>
+                    <input 
+                        className={display} 
+                        type={type} 
+                        value={value} 
+                        onChange={this.handleChange} 
+                        placeholder={placeholder} 
+                        maxLength={length}></input>
+                </div>
+            );
+        } else if (editable && type === 'textarea') {
+            return (
+                <div className="Textarea editable">
+                    <label>{label}</label>
+                    <textarea
+                        className={display}
+                        value={value}
+                        onChange={this.handleChange}
+                        placeholder={placeholder}
+                        cols={cols}
+                        rows={rows}
+                        maxLength={length}></textarea>
                 </div>
             );
         } else {

@@ -50,6 +50,8 @@ class Practical extends React.Component {
                         placeholder={"Role description"}
                         label={"Role Description"}
                         type={"textarea"}
+                        cols={"50"}
+                        rows={"5"}
                         editable={this.state.isEditable} />
                 </fieldset>
             </form>
