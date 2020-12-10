@@ -1,7 +1,7 @@
-import General from './General'
+import General from './Components/General'
 import './App.css'
-import Education from './Education'
-import Practical from './Practical'
+import Education from './Components/Education'
+import Practical from './Components/Practical'
 
 function App() {
   return (
